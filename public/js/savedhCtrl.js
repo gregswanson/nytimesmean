@@ -1,8 +1,8 @@
-controllers.searchCtrl = function($scope, $http){
-	$scope.results = []; 
+controllers.savedCtrl = function($scope, $http){
+	//$scope.results = []; 
 
 	
-	$scope.searchNow = function(){
+	$scope.getArticles = function(){
 
 		$http.get('http://api.nytimes.com/svc/search/v2/articlesearch.json?q='+ $scope.searchTerm +'&begin_date='+ $scope.beginTerm +'0101&end_date='+ $scope.endTerm +'0101&api-key=9d4a8986921972b65754ea0809d47c84%3A12%3A74623931')
     		.then(function(response) {
@@ -15,26 +15,13 @@ controllers.searchCtrl = function($scope, $http){
 		$scope.endTerm = "";
 	};
 
-	$scope.saveIt = function(index){
-		    //var title = $scope.results[index].headline.main;
-			//var body = $scope.results[index].abstract;
-			//var link = $scope.results[index].web_url;
-
+	$scope.deleteIt = function(index){
 		var savedResult = {
 			title: $scope.results[index].headline.main,
 			body: $scope.results[index].abstract,
 			link: $scope.results[index].web_url
 		};
-
-		console.log(savedResult);
 		
-		 // Saves the article data to the db
-        $http.post('/saveArticle', savedResult)
-            .success(function (data) {
-            	console.log("success");
-            })
-            .error(function (data) {
-                console.log('Error: ' + data);
-            });
-    };
+		console.log(savedResult);
+	}
 };

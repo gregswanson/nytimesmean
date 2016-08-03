@@ -22,10 +22,10 @@
 	<div class="col-md-10">
 		<div>{{ result.headline.main }}</div>
 		<div>{{ result.abstract }}</div>
-		<div><a href="" target="_blank">{{ result.web_url }}</a></div>
+		<div><a ng-href="{{ result.web_url }}" target="_blank">{{ result.web_url }}</a></div>
 	</div>
 	<div class="col-md-2">
-	<button type="submit" class="btn" ng-click="saveIt($index)">Save</button>
+	<button class="btn" ng-click="saveIt($index)">Save</button>
 	</div>
 </div>
 </div>

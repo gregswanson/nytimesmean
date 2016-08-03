@@ -1,0 +1,31 @@
+<div class="row text-center">
+	<form class="form-inline">
+		  <div class="form-group">
+
+		    <label class="" for="searchTerm">Search Term:</label>
+		    <input type="text" class="form-control" id="searchTerm" placeholder="Search Term..." ng-model="searchTerm" />
+		  </div>
+		  <div class="form-group">
+		    <label class="" for="beginTerm">Begin Year:</label>
+		    <input type="text" class="form-control" id="beginTerm" placeholder="Begin Year..." ng-model="beginTerm" />
+		  </div>
+		  <div class="form-group">
+		    <label class="" for="endTerm">End Year:</label>
+		    <input type="text" class="form-control" id="endTerm" placeholder="End Year..." ng-model="endTerm" />
+		  </div>
+		  <button class="btn btn-primary" ng-click="searchNow()">Search</button>
+	</form>
+	  
+	</div>
+<h1>This is the search</h1>
+<div class="row searchBox" ng-repeat="result in results">
+	<div class="col-md-10">
+		<div>{{ result.headline.main }}</div>
+		<div>{{ result.abstract }}</div>
+		<div><a href="" target="_blank">{{ result.web_url }}</a></div>
+	</div>
+	<div class="col-md-2">
+	<button type="submit" class="btn" ng-click="saveIt($index)">Save</button>
+	</div>
+</div>
+</div>

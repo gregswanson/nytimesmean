@@ -1,0 +1,26 @@
+var nytimesmean = angular.module('nytimesmean', ['ngRoute', 'ngAnimate']);
+
+
+var controllers = {};
+nytimesmean.controller(controllers);
+
+
+
+nytimesmean.config(function ($routeProvider){
+	$routeProvider
+	.when ('/', {
+		//controller: 'simpleController',
+		templateUrl: 'intro.html'
+	})
+	.when ('/search', {
+		controller: 'searchCtrl',
+		templateUrl: 'search.html'
+	})
+	.when ('/saved', {
+		//controller: 'simpleController',
+		templateUrl: 'saved.html'
+	})
+	.otherwise({
+		redirectTo: '/'
+	});
+});

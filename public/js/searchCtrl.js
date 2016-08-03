@@ -1,5 +1,6 @@
 controllers.searchCtrl = function($scope, $http){
 	$scope.results = []; 
+	$scope.keepers = []; 
 
 	
 	$scope.searchNow = function(){
@@ -37,4 +38,36 @@ controllers.searchCtrl = function($scope, $http){
                 console.log('Error: ' + data);
             });
     };
+
+//// New controller
+	
+
+	
+	$scope.getArticles = function(){
+
+		$http.get('/getArticles')
+    		.then(function(response) {
+        $scope.keepers = response.data;
+        console.log(response);
+    	});
+
+   
+	};
+
+	$scope.deleteIt = function(id){
+		var id = id;
+		var deleteID =  {id: id}; 
+		$http.post('/delete', deleteID)
+            .success(function (data) {
+            	console.log("success");
+            })
+            .error(function (data) {
+                console.log('Error: ' + data);
+            });
+            $scope.getArticles();
+	}
+
+	$scope.getArticles();
+
+
 };

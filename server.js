@@ -86,7 +86,7 @@ var Article = require('./app/Article.js');
 
 
 //routes
-// app.get('/', function(req, res) {
+// app.get('/getArticles', function(req, res) {
 //   res.send(index.html);
 // });
 
@@ -143,15 +143,20 @@ var Article = require('./app/Article.js');
 
 
 
-// app.get('/articles', function(req, res){
-// 	Article.find({}, function(err, doc){
-// 		if (err){
-// 			console.log(err);
-// 		} else {
-// 			res.json(doc);
-// 		}
-// 	});
-// });
+app.get('/getArticles', function(req, res){
+	Article.find({}, function(err, doc){
+		if (err){
+			console.log(err);
+		} else {
+			res.json(doc);
+		}
+	});
+});
+
+app.post('/delete', function(req, res){
+	
+	Article.find({ '_id': req.body.id }).remove().exec();
+});
 
 // ////////// Get Notes ///////////
 

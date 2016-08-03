@@ -17,7 +17,7 @@ nytimesmean.config(function ($routeProvider){
 		templateUrl: 'search.html'
 	})
 	.when ('/saved', {
-		controller: 'savedhCtrl',
+		controller: 'searchCtrl',
 		templateUrl: 'saved.html'
 	})
 	.otherwise({

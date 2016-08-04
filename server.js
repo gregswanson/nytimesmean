@@ -15,10 +15,10 @@ app.use(express.static('public'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components')); // Use BowerComponents
 
 //database
-mongoose.connect('mongodb://localhost/nytsearch');
-//var mongodbUri = 'mongodb://greg:12345@ds021343.mlab.com:21343/heroku_lh1cvw0w';
+//mongoose.connect('mongodb://localhost/nytsearch');
+var mongodbUri = 'mongodb://greg:12345@ds139675.mlab.com:39675/heroku_dch8t128';
 
-//mongoose.connect(mongodbUri);
+mongoose.connect(mongodbUri);
 var db = mongoose.connection;
 
 db.on('error', function (err) {

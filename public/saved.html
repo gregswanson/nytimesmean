@@ -1,14 +1,12 @@
-<div class="row text-center">
-	<h1>This is Saved</h1>
-	</div>
+
 <div class="row searchBox" ng-repeat="keep in keepers">
 	<div class="col-md-10">
-		<div>{{ keep.title }}</div>
-		<div>{{ keep.body }}</div>
-		<div><a ng-href="{{ keep.link }}" target="_blank">{{ keep.link }}</a></div>
+		<div class="headline">{{ keep.title }}</div>
+		<div class="copy">{{ keep.body }}</div>
+		<div class="link"><a ng-href="{{ keep.link }}" target="_blank">{{ keep.link }}</a></div>
 	</div>
-	<div class="col-md-2">
-	<button class="btn" ng-click="deleteIt(keep._id)">Delete</button>
+	<div class="col-md-2 text-center holder">
+	<button class="btn delete" ng-click="deleteIt(keep._id)">Delete</button>
 	</div>
 </div>
 </div>

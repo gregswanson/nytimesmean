@@ -1,4 +1,4 @@
-var nytimesmean = angular.module('nytimesmean', ['ngRoute', 'ngAnimate']);
+var nytimesmean = angular.module('nytimesmean', ['ngRoute', 'ngAnimate', 'ngSanitize']);
 
 
 var controllers = {};

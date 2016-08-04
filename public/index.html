@@ -7,16 +7,18 @@
     <meta name="description" content="NYTimes Search App">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
+    <link rel="stylesheet" href="./reset.css"/>
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="./scss/style.css"/>
     
-    <!-- Modernizr 
-    <script src="../bower_components/modernizr/bin/modernizr"></script>-->
+    <!--Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900|Merriweather:400,700' rel='stylesheet' type='text/css'>
     <!-- JS Source -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
 
     
     <!-- Angular Scripts -->
@@ -26,15 +28,20 @@
 <body>
 <div class="container">
     <div class="row col-md-12 text-center">
-        <h1>New York Times Search</h1>
+        <div><h1 class="main">New York Times Search</h1></div>
     </div>
-    <div class="text-center">
-        <p><a href="#/search">Search</a> | <a href="#/saved">Saved</a></p>
-        
+    <div class="row text-center col-md-12">
+    <div class="searchContain">
+        <div class="searchBar"><a href="#/search">Search</a></div><div class="searchBar"><a href="#/saved">Saved</a></div>
     </div>
-<div>
+    </div>
+<div class="row view">
     <ng-view></ng-view>
 </div>
+
+</div>
+<div class="footer text-center">
+<p>MEAN App 2016</p>
 
 </div>
 </body>

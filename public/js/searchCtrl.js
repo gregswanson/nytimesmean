@@ -1,6 +1,7 @@
 controllers.searchCtrl = function($scope, $http){
 	$scope.results = []; 
 	$scope.keepers = []; 
+	$scope.placeholder = '<p>Enter a Term, Start Year, and End Year to begin.</p>';
 
 	
 	$scope.searchNow = function(){
@@ -10,7 +11,7 @@ controllers.searchCtrl = function($scope, $http){
         $scope.results = response.data.response.docs;
         console.log(response.data.response.docs);
     	});
-
+    	$scope.placeholder = "";
     	$scope.searchTerm = "";
 		$scope.beginTerm = "";
 		$scope.endTerm = "";

@@ -8,7 +8,7 @@ nytimesmean.controller(controllers);
 
 nytimesmean.config(function ($routeProvider){
 	$routeProvider
-	.when ('/', {
+	.when ('/search', {
 		//controller: 'simpleController',
 		templateUrl: 'intro.html'
 	})
@@ -21,6 +21,6 @@ nytimesmean.config(function ($routeProvider){
 		templateUrl: 'saved.html'
 	})
 	.otherwise({
-		redirectTo: '/'
+		redirectTo: '/search'
 	});
 });

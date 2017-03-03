@@ -24,11 +24,12 @@ controllers.searchCtrl = function($scope, $http){
 
 		var savedResult = {
 			title: $scope.results[index].headline.main,
-			body: $scope.results[index].abstract,
+			body: $scope.results[index].lead_paragraph,
 			link: $scope.results[index].web_url
 		};
 
 		console.log(savedResult);
+		//console.log('body', $scope.results[index].lead_paragraph);
 		
 		 // Saves the article data to the db
         $http.post('/saveArticle', savedResult)

@@ -21,7 +21,7 @@
 <div class="row searchBox" ng-repeat="result in results">
 	<div class="col-md-10">
 		<div class="headline">{{ result.headline.main }}</div>
-		<div class="copy">{{ result.abstract }}</div>
+		<div class="copy">{{ result.lead_paragraph }}</div>
 		<div class="link"><a ng-href="{{ result.web_url }}" target="_blank">{{ result.web_url }}</a></div>
 	</div>
 	<div class="col-md-2 text-center holder">

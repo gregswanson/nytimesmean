@@ -6,7 +6,7 @@ controllers.searchCtrl = function($scope, $http){
 	
 	$scope.searchNow = function(){
 
-		$http.get('http://api.nytimes.com/svc/search/v2/articlesearch.json?q='+ $scope.searchTerm +'&begin_date='+ $scope.beginTerm +'0101&end_date='+ $scope.endTerm +'0101&api-key=fc528b0599894edcbc113a5b6026ba37')
+		$http.get('https://api.nytimes.com/svc/search/v2/articlesearch.json?q='+ $scope.searchTerm +'&begin_date='+ $scope.beginTerm +'0101&end_date='+ $scope.endTerm +'0101&api-key=fc528b0599894edcbc113a5b6026ba37')
     		.then(function(response) {
         $scope.results = response.data.response.docs;
         console.log(response.data.response.docs);
